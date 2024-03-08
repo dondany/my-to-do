@@ -1,17 +1,17 @@
 {
   "todos": [
     {
-      "id": 1,
+      "id": "1",
       "text": "Do some work",
       "completed": true
     },
     {
-      "id": 2,
+      "id": "2",
       "text": "Learn angular",
       "completed": false
     },
     {
-      "id": 3,
+      "id": "3",
       "text": "Exercise",
       "completed": false
     }

@@ -1,6 +1,5 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
-import { TodoService } from '../../shared/service/todo.service';
+import { Component, EventEmitter, OnInit, Output, input } from '@angular/core';
+import { Todo } from '../../shared/model/todo';
 
 @Component({
   standalone: true,
@@ -10,14 +9,17 @@ import { TodoService } from '../../shared/service/todo.service';
       @for(todo of todos(); track todo.id) {
       <li>
         <span>{{ todo.text }}</span>
-        <input type="checkbox" [checked]="todo.completed" />
+        <input
+          type="checkbox"
+          [checked]="todo.completed"
+          (change)="toggleTodo.emit(todo)"
+        />
       </li>
       }
     </ul>
   `,
 })
 export class TodoListComponent {
-  todoService = inject(TodoService);
-
-  todos = toSignal(this.todoService.getTodos());
+  todos = input.required<Todo[]>();
+  @Output() toggleTodo: EventEmitter<Todo> = new EventEmitter();
 }
