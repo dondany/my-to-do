@@ -45,5 +45,18 @@ export const TodoStore = signalStore(
         })
       )
     ),
+    deleteTodo: rxMethod<string>(
+      pipe(
+        switchMap((id) => {
+          return todoService.deleteTodo(id).pipe(
+            tap(() =>
+              patchState(store, {
+                todos: [...store.todos().filter((t) => t.id !== id)],
+              })
+            )
+          );
+        })
+      )
+    ),
   }))
 );

@@ -2,18 +2,20 @@ import { Component, OnInit, inject } from '@angular/core';
 import { TodoListComponent } from './ui/todo-list.component';
 import { TodoStore } from '../shared/todo.store';
 import { Todo } from '../shared/model/todo';
+import { TodoFormComponent } from './ui/todo-form.component';
 
 @Component({
   standalone: true,
   selector: 'app-home',
   template: `<div class="">
+    <app-todo-form (addTodo)="todoStore.addTodo($event)" />
     <app-todo-list
       [todos]="todoStore.todos()"
       (toggleTodo)="todoStore.toggleTodo($event)"
+      (deleteTodo)="todoStore.deleteTodo($event)"
     />
-    <button (click)="todoStore.addTodo('lol')">Add</button>
   </div>`,
-  imports: [TodoListComponent],
+  imports: [TodoListComponent, TodoFormComponent],
 })
 export default class HomeComponent implements OnInit {
   todoStore = inject(TodoStore);

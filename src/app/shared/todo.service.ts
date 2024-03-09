@@ -21,4 +21,8 @@ export class TodoService {
       completed,
     });
   }
+
+  deleteTodo(id: string) {
+    return this.http.delete(`http://localhost:8000/todos/${id}`);
+  }
 }

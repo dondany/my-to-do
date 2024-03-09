@@ -8,12 +8,13 @@ import { Todo } from '../../shared/model/todo';
     <ul>
       @for(todo of todos(); track todo.id) {
       <li>
-        <span>{{ todo.text }}</span>
         <input
           type="checkbox"
           [checked]="todo.completed"
           (change)="toggleTodo.emit(todo)"
         />
+        <span>{{ todo.text }}</span>
+        <button (click)="deleteTodo.emit(todo.id)">x</button>
       </li>
       }
     </ul>
@@ -22,4 +23,5 @@ import { Todo } from '../../shared/model/todo';
 export class TodoListComponent {
   todos = input.required<Todo[]>();
   @Output() toggleTodo: EventEmitter<Todo> = new EventEmitter();
+  @Output() deleteTodo: EventEmitter<string> = new EventEmitter();
 }
