@@ -10,7 +10,14 @@ import { TodoFormComponent } from './ui/todo-form.component';
   template: `<div class="">
     <app-todo-form (addTodo)="todoStore.addTodo($event)" />
     <app-todo-list
-      [todos]="todoStore.todos()"
+      title="To do"
+      [todos]="todoStore.activeTodos()"
+      (toggleTodo)="todoStore.toggleTodo($event)"
+      (deleteTodo)="todoStore.deleteTodo($event)"
+    />
+    <app-todo-list
+      title="Completed"
+      [todos]="todoStore.completedTodos()"
       (toggleTodo)="todoStore.toggleTodo($event)"
       (deleteTodo)="todoStore.deleteTodo($event)"
     />

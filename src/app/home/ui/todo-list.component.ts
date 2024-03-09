@@ -5,6 +5,7 @@ import { Todo } from '../../shared/model/todo';
   standalone: true,
   selector: 'app-todo-list',
   template: `
+    <h2>{{ title() }}</h2>
     <ul>
       @for(todo of todos(); track todo.id) {
       <li>
@@ -22,6 +23,7 @@ import { Todo } from '../../shared/model/todo';
 })
 export class TodoListComponent {
   todos = input.required<Todo[]>();
+  title = input.required<string>();
   @Output() toggleTodo: EventEmitter<Todo> = new EventEmitter();
   @Output() deleteTodo: EventEmitter<string> = new EventEmitter();
 }
