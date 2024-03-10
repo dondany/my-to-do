@@ -7,20 +7,24 @@ import { TodoFormComponent } from './ui/todo-form.component';
 @Component({
   standalone: true,
   selector: 'app-home',
-  template: `<div class="">
-    <app-todo-form (addTodo)="todoStore.addTodo($event)" />
-    <app-todo-list
-      title="To do"
-      [todos]="todoStore.activeTodos()"
-      (toggleTodo)="todoStore.toggleTodo($event)"
-      (deleteTodo)="todoStore.deleteTodo($event)"
-    />
-    <app-todo-list
-      title="Completed"
-      [todos]="todoStore.completedTodos()"
-      (toggleTodo)="todoStore.toggleTodo($event)"
-      (deleteTodo)="todoStore.deleteTodo($event)"
-    />
+  template: `<div class="h-screen w-full flex justify-center">
+    <div class="w-96 flex flex-col gap-4 mt-6">
+      <app-todo-form (addTodo)="todoStore.addTodo($event)" class="w-full" />
+      <app-todo-list
+        title="TO DO"
+        [todos]="todoStore.activeTodos()"
+        (toggleTodo)="todoStore.toggleTodo($event)"
+        (deleteTodo)="todoStore.deleteTodo($event)"
+        class="w-full"
+      />
+      <app-todo-list
+        title="COMPLETED"
+        [todos]="todoStore.completedTodos()"
+        (toggleTodo)="todoStore.toggleTodo($event)"
+        (deleteTodo)="todoStore.deleteTodo($event)"
+        class="w-full"
+      />
+    </div>
   </div>`,
   imports: [TodoListComponent, TodoFormComponent],
 })

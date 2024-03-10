@@ -5,10 +5,22 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
   standalone: true,
   selector: 'app-todo-form',
   template: `
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <input type="text" formControlName="text" />
-      <button type="submit">
-        <span class="material-symbols-outlined"> add </span>
+    <form
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()"
+      class="p-2 w-full flex items-center justify-between gap-3 bg-slate-900 rounded-full"
+    >
+      <input
+        type="text"
+        formControlName="text"
+        class="px-4 flex-grow bg-transparent outline-none text-slate-300"
+        placeholder="Add item..."
+      />
+      <button
+        type="submit"
+        class="p-1 flex justify-center items-center bg-blue-300 rounded-full"
+      >
+        <span class="material-symbols-outlined text-white"> add </span>
       </button>
     </form>
   `,
