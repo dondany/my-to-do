@@ -64,9 +64,7 @@ export const ChecklistStore = signalStore(
           ),
           tap((todo) => {
             const currentChecklist = { ...store.currentChecklist()! };
-            console.log('przed', currentChecklist);
             currentChecklist.todos = [...currentChecklist.todos, todo];
-            console.log('po', currentChecklist);
             patchState(store, { currentChecklist });
           })
         )
