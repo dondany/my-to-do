@@ -15,11 +15,14 @@ import { CommonModule } from '@angular/common';
         @for(todo of todos(); track todo.id) {
         <li
           (click)="toggleTodo.emit(todo)"
-          class="my-2 p-3 bg-slate-700 text-slate-300 rounded-md flex justify-start items-center gap-3 cursor-pointer hover:bg-slate-600"
+          class="my-2 p-3   rounded-md flex justify-start items-center gap-3 cursor-pointer border shadow-sm
+          hover:bg-slate-50 text-slate-500
+          dark:bg-slate-700 dark:border-white/10  hover:dark:bg-slate-600 dark:text-slate-300"
         >
           <div
-            class="size-5 bg-slate-300 rounded-full flex justify-center items-center"
-            [ngClass]="{ 'bg-green-200': todo.completed }"
+            class="size-6 rounded-full flex justify-center items-center border
+            dark:bg-slate-300"
+            [ngClass]="{ 'bg-green-200 border-none': todo.completed }"
           >
             @if(todo.completed) {
             <span class="material-symbols-outlined text-green-600 text-lg"

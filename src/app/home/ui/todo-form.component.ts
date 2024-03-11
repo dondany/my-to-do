@@ -8,7 +8,9 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
     <form
       [formGroup]="form"
       (ngSubmit)="onSubmit()"
-      class="p-2 w-full flex items-center justify-between gap-3 bg-slate-900 rounded-full"
+      class="p-2 w-full flex items-center justify-between gap-3 rounded-full
+      bg-slate-100
+      dark:bg-slate-900"
     >
       <input
         type="text"

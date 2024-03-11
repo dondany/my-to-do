@@ -1,4 +1,4 @@
-# MyToDo
+# MyToDo inspired my https://dribbble.com/shots/4411419-Todo-List-Mobile-App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
 

@@ -1,11 +1,23 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ThemeService } from './shared/theme.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  template: ` <router-outlet /> `,
+  template: `
+    <div
+      class="h-screen dark:bg-slate-800"
+      [ngClass]="{ dark: themeService.dark() }"
+    >
+      <router-outlet />
+    </div>
+  `,
+
   styles: [],
+  imports: [RouterOutlet, CommonModule],
 })
-export class AppComponent {}
+export class AppComponent {
+  themeService = inject(ThemeService);
+}
