@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output, input } from '@angular/core';
-import { Todo } from '../../shared/model/todo';
+import { Todo } from '../../../../shared/model/todo';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
         @for(todo of todos(); track todo.id) {
         <li
           (click)="toggleTodo.emit(todo)"
-          class="my-2 p-3   rounded-md flex justify-start items-center gap-3 cursor-pointer border shadow-sm
+          class="my-2 p-3 rounded-md flex justify-start items-center gap-3 cursor-pointer border shadow-sm
           hover:bg-slate-50 text-slate-500
           dark:bg-slate-700 dark:border-white/10  hover:dark:bg-slate-600 dark:text-slate-300"
         >

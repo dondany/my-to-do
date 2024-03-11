@@ -25,11 +25,8 @@ export const TodoStore = signalStore(
     isLoading: false,
   }),
   withMethods((store, todoService = inject(TodoService)) => ({
-    loadTodos: rxMethod<void>(
-      pipe(
-        switchMap(() => todoService.getTodos()),
-        tap((todos) => patchState(store, { todos }))
-      )
+    setTodos: rxMethod<Todo[]>(
+      pipe(tap((todos) => patchState(store, { todos })))
     ),
     addTodo: rxMethod<string>(
       pipe(

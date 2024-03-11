@@ -1,19 +1,48 @@
 {
-  "todos": [
+  "checklists": [
     {
       "id": "1",
-      "text": "Do some work",
-      "completed": true
+      "name": "My todo"
     },
     {
       "id": "2",
-      "text": "Learn angular",
-      "completed": false
+      "name": "My todo 2"
     },
     {
-      "id": "3",
-      "text": "Exercise",
-      "completed": false
+      "id": "c857",
+      "name": "My new todos"
+    }
+  ],
+  "todos": [
+    {
+      "id": "1397",
+      "text": "Do something 1",
+      "completed": false,
+      "checklistId": "1"
+    },
+    {
+      "id": "9310",
+      "text": "Do something 2",
+      "completed": false,
+      "checklistId": "1"
+    },
+    {
+      "id": "03c5",
+      "text": "Do something 4",
+      "completed": true,
+      "checklistId": "2"
+    },
+    {
+      "id": "3824",
+      "text": "Do something 5",
+      "completed": true,
+      "checklistId": "2"
+    },
+    {
+      "id": "ef43",
+      "text": "Do something 6",
+      "completed": false,
+      "checklistId": "c857"
     }
   ]
 }
