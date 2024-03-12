@@ -14,8 +14,8 @@ import { TodoListComponent } from './checklist/todo/ui/todo-list.component';
   standalone: true,
   selector: 'app-home',
   template: `<div class="w-full flex justify-center">
-    <div class="w-96 flex flex-col">
-      <div class="w-full h-14 flex justify-between text-slate-400">
+    <div class="w-96 mt-2 flex flex-col">
+      <div class="w-full h-14 flex justify-between items-center text-slate-400">
         @if (route.firstChild?.url | async; as urlSegments) { @if
         (urlSegments.length > 1 ) {
         <button class="flex items-center gap-1" routerLink="../">
@@ -24,12 +24,15 @@ import { TodoListComponent } from './checklist/todo/ui/todo-list.component';
         </button>
         } }
 
-        <button (click)="themeService.toggle()" class="ml-auto dark:text-white">
+        <button
+          (click)="themeService.toggle()"
+          class="ml-auto text-white border-slate-400/70 bg-slate-400 rounded-full w-8 h-8 text-sm"
+        >
           @if (themeService.dark()) {
-          <span class="material-symbols-outlined"> light_mode </span>
+          <span class="material-symbols-outlined text-lg"> light_mode </span>
           } @else {
 
-          <span class="material-symbols-outlined"> dark_mode </span>
+          <span class="material-symbols-outlined text-lg"> dark_mode </span>
           }
         </button>
       </div>
