@@ -26,6 +26,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
       >
         <span class="material-symbols-outlined text-white"> add </span>
       </button>
+      <div class=""></div>
     </form>
   `,
   imports: [ReactiveFormsModule],
@@ -43,6 +44,9 @@ export class InputFormComponent {
   }
 
   onSubmit() {
+    if (!this.form.valid) {
+      return;
+    }
     this.addItem.emit(this.text.getRawValue());
     this.form.reset();
   }
