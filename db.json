@@ -11,31 +11,29 @@
     {
       "id": "c857",
       "name": "My new todos"
+    },
+    {
+      "id": "c89d",
+      "name": ""
     }
   ],
   "todos": [
     {
       "id": "1397",
       "text": "Do something 1",
-      "completed": false,
-      "checklistId": "1"
-    },
-    {
-      "id": "9310",
-      "text": "Do something 2",
-      "completed": false,
+      "completed": true,
       "checklistId": "1"
     },
     {
       "id": "03c5",
       "text": "Do something 4",
-      "completed": true,
+      "completed": false,
       "checklistId": "2"
     },
     {
       "id": "3824",
       "text": "Do something 5",
-      "completed": true,
+      "completed": false,
       "checklistId": "2"
     },
     {
@@ -43,6 +41,12 @@
       "text": "Do something 6",
       "completed": false,
       "checklistId": "c857"
+    },
+    {
+      "id": "c702",
+      "text": "Do something 2",
+      "completed": true,
+      "checklistId": "1"
     }
   ]
 }

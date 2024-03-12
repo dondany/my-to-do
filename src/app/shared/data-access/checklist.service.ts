@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Todo } from './model/todo';
-import { Checklist, ChecklistDetails } from './model/checklist';
+import { Checklist, ChecklistDetails } from '../model/checklist';
 
 @Injectable({
   providedIn: 'root',
