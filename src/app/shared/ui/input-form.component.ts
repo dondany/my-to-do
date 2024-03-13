@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output, inject, input } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { IconButtonComponent } from './icon-button.component';
 
 @Component({
   standalone: true,
@@ -15,21 +16,15 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
       <input
         type="text"
         formControlName="text"
-        class="px-4 flex-grow bg-transparent outline-none 
+        class="px-1 flex-grow bg-transparent outline-none 
         text-slate-500
         dark:text-slate-300"
         [placeholder]="placeholder()"
       />
-      <button
-        type="submit"
-        class="p-1 flex justify-center items-center bg-blue-300 rounded-full"
-      >
-        <span class="material-symbols-outlined text-white"> add </span>
-      </button>
-      <div class=""></div>
+      <app-icon-btn icon="add" type="submit" colorClass="bg-blue-300" />
     </form>
   `,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, IconButtonComponent],
 })
 export class InputFormComponent {
   placeholder = input<string>('Add item...');

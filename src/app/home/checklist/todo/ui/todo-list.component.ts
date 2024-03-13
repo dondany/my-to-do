@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output, input } from '@angular/core';
 import { Todo } from '../../../../shared/model/todo';
 import { CommonModule } from '@angular/common';
+import { IconButtonComponent } from '../../../../shared/ui/icon-button.component';
 
 @Component({
   standalone: true,
@@ -50,7 +51,7 @@ import { CommonModule } from '@angular/common';
       </ul>
     </div>
   `,
-  imports: [CommonModule],
+  imports: [CommonModule, IconButtonComponent],
 })
 export class TodoListComponent {
   todos = input.required<Todo[]>();

@@ -8,7 +8,7 @@ import { ThemeService } from './shared/theme.service';
   standalone: true,
   template: `
     <div
-      class="h-screen dark:bg-slate-800"
+      class="h-screen dark:bg-slate-800 transition-colors duration-300"
       [ngClass]="{ dark: themeService.dark() }"
     >
       <router-outlet />
